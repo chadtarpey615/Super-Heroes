@@ -1,15 +1,14 @@
-const apiKey = "3adfda20d076cfbd8b85d5400f732cac58810057"
+const apiKey = "dccc626c7bbab4fb50200a2eecb2a4af"
 const token = "3649349035133511"
 
 //https://comicvine.gamespot.com/api/search/?api_key=3adfda20d076cfbd8b85d5400f732cac58810057&format=json&sort=name:asc&resources=issue&query=
 
 function searchComics() {
    
-        var queryURL = "https://comicvine.gamespot.com/api/characters/?format=json&api_key=3adfda20d076cfbd8b85d5400f732cac58810057"
+        var queryURL = "https://gateway.marvel.com:443/v1/public/characters?apikey=dccc626c7bbab4fb50200a2eecb2a4af"
+        
     $.ajax({
         url: queryURL,
-        dataType: 'jsonp',
-        crossDomain: true,
         method: "GET"
     }).then(function(response){
         console.log(response);
