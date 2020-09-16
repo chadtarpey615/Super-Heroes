@@ -1,3 +1,5 @@
+
+
 /*-- BODY --*/
 body{
     margin: 0;
@@ -15,9 +17,23 @@ body{
 
 
 
+
 h1 {
     text-align: center;
 }
+
+#canvas-image {
+    position: absolute;
+    display: block;
+    width: 640px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
 
 /*-- Jumbotron Image --*/
 .jumbotron {
@@ -26,3 +42,4 @@ h1 {
   }
   
   
+
