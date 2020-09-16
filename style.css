@@ -19,8 +19,10 @@ h1 {
     text-align: center;
 }
 
+/*-- Jumbotron Image --*/
 .jumbotron {
     background-image: url("./assesst/image/superimage.jpg");
     background-size: cover;
   }
+  
   
