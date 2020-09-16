@@ -4,7 +4,7 @@ var firstGranim = new Granim({
     isPausedWhenNotInView: true,
     image : {
         source: "../assets/venomeyes.jpg",
-        stretchMode: ["stretch", "stretch"],
+        stretchMode: ["stretch", "stretch-if-bigger"],
         blendingMode: 'multiply'
     },
     states : {
