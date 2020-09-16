@@ -1,8 +1,5 @@
 
-html, body {
-    margin: 0 ;
-    padding: 0 ;
-}
+
 /*-- BODY --*/
 body{
     margin: 0;
@@ -28,7 +25,7 @@ h1 {
 #canvas-image {
     position: absolute;
     display: block;
-    width: 100%;
+    width: 640px;
     height: 100%;
     top: 0;
     right: 0;

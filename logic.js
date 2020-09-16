@@ -6,7 +6,7 @@ var granimInstance = new Granim({
     direction: 'top-bottom',
     isPausedWhenNotInView: true,
     image : {
-        source: "../assets/venom.jpeg",
+        source: "../assets/venomeyes.jpg",
         blendingMode: 'multiply'
     },
     states : {
@@ -48,6 +48,3 @@ console.log(resp);
 $("#searchComic").on("click", searchComics);
 $("#stats").on("click", searchStats);
 
-var html = document.querySelector('html');
-html.style.backgroundImage = "../assets/venom.jpeg";
-html.style.backgroundSize = 'cover';
