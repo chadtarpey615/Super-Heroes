@@ -37,12 +37,34 @@ function searchStats() {
 
 var superHeroURL = "https://cors-anywhere.herokuapp.com/https://superheroapi.com/api/3649349035133511/search/batman";
 
+<<<<<<< Updated upstream
 $.ajax({
     url: superHeroURL,
     method: "GET"
 }).then(function(resp) {
 console.log(resp);
 })
+=======
+    $.ajax({
+        url: superHeroURL,
+        method: "GET"
+    }).then(function (resp) {
+        console.log(resp);
+        let results = resp.results;
+        
+        
+           // let statDiv = $("#openStats")
+           let pOne = $("<p>").text("Name:" + resp.results[0].name);
+    
+            $("#openStats").append(pOne);
+
+
+        
+
+
+    })
+
+>>>>>>> Stashed changes
 }
 
 $("#searchComic").on("click", searchComics);
