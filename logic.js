@@ -10,6 +10,11 @@ function searchComics(inputHero) {
 
     var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + inputHero + "&api_key=ylOh5EkXUQkSxMIfVASfxguYWOW2lyPl&limit=10"
 
+    var movieUrl = " https://www.omdbapi.com/?t=" + inputHero + "&apikey=86e6eaa8"
+
+   // var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
+
+
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -17,6 +22,7 @@ function searchComics(inputHero) {
         console.log(response);
 
         $(".description").empty();
+        $(".Comics").empty()
 
 
 
@@ -86,10 +92,20 @@ function searchComics(inputHero) {
         method: "GET"
     }).then(function (resp1) {
         console.log(resp1);
+        $(".giphy").empty();
 
-        let newGif = $("<img>").attr("src", resp1.data[1].images.original.url)
-        $(".main-area").append(newGif);
-    console.log( resp1.data[1].analytics.onload.url)
+        for(var g = 7; g <  resp1.data.length; g++){
+        let newGif = $("<img>").attr("src", resp1.data[g].images.original.url)
+        $(".giphy").append(newGif);
+        }
+
+    })
+
+    $.ajax({
+        url: movieUrl,
+        method: "GET"
+    }).then(function (response2) {
+        console.log(response2);
 
     })
 }
