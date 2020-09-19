@@ -61,16 +61,19 @@ h1 {
   }
 
 
-   .Images img{
-    
+   .description img{
+        height: 300px ;
+        width: 300px;
+        border: 10px solid deeppink;
   } 
    
 
   .description {
       text-align: left;
       outline: auto;
-      background-color: rgb(73, 70, 70);
       font-size: small;
+      margin-top: 10px;
+      padding-top: 20px;
   }
 
   .description h4 {
@@ -81,6 +84,8 @@ h1 {
   .stats-input {
      display: inline;
      color: white;
+     font-size: x-large;
+     text-align: left;
 
   }
   

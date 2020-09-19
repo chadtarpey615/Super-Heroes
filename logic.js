@@ -54,6 +54,8 @@ function searchComics(inputHero) {
         let title1 = $("<th>").text("Attribute");
         let title2 = $("<th>").text("Value");
         let height = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height));
+        let weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[0].appearance.weight));
+
 
         let stat1 = $("<tr>").text("Combat").append($("<td>").text(resp.results[0].powerstats.combat));
         let stat2 = $("<tr>").text("Durability").append($("<td>").text(resp.results[0].powerstats.durability));
@@ -71,12 +73,12 @@ function searchComics(inputHero) {
         
         //$(".Stats").append(header)
         $(".stats-input").append(title1, title2);
-        $(".stats-input").append(stat1, stat2,stat3,stat4,stat5,stat6, height);
+        $(".stats-input").append(stat1, stat2,stat3,stat4,stat5,stat6, height, weight);
 
 
       //  for (var i = 0; i < resp.results.length; i++){
             let newImage = $("<img>").attr( "src",  resp.results[0].image.url );
-           $(".Images").append(newImage)
+           $(".description").append(newImage)
         //}
 
        
