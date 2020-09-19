@@ -15,19 +15,38 @@ body{
 
  }
 
-
-
- 
-  
-
-h1 {
-    text-align: center;
+ h1 {
+    font-family: "Bangers", cursive;
+    font-size: 10rem;
+    color: red;
+    text-shadow: -10px 8px yellow;
+    line-height: 1;
+    -ms-transform: skewY(-5deg); /* IE 9 compatibility */
+    transform: skewY(-5deg);
+    margin-top: .75rem;
+    -webkit-text-stroke: 5px blue;
 }
 
 .top {
-    border: solid;
     padding-top: 5%;
 }
+
+#hero-search {
+    color: white;
+    background-position: center;
+    background-size:cover;
+    background-blend-mode: darken;
+    background-color: #ffff0088;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 5px solid black;
+    text-align: center;
+}
+
+
+
 
 #canvas-image-blending {
     position: absolute;
@@ -67,21 +86,15 @@ h1 {
   }
 
 
-   .description img{
-        height: 300px ;
-        width: 300px;
-  } 
-   
-
   .description {
       text-align: left;
-      outline: auto;
       font-size: small;
       margin-top: 10px;
       padding-top: 20px;
       padding-left: 20px;
       padding-right: 20px;
   }
+      
 
   .description h4 {
       text-align: center;
@@ -91,9 +104,9 @@ h1 {
   .stats-input {
      display: inline;
      color: white;
-     font-size: medium;
+     font-size: large;
      text-align: left;
-     padding-left: 10px;
+     padding-left: 30px;
      padding-bottom: -600px;
 
   }
@@ -112,9 +125,7 @@ h1 {
 
   }
   
-  #hero-search {
-      color: white;
-  }
+ 
   
   h2 {
       font-size: x-large;
@@ -126,14 +137,15 @@ h1 {
 
   .movies {
       padding-top: -300px;
-      padding-bottom: 200px;
+      padding-bottom: 600px;
       padding-left: 50px;
   }
 
   .Comics {
     text-align: left;
     outline: auto;
-    font-size: small;
+    border-color: red;
+    font-size: medium;
     margin-top: 10px;
     padding-top: 20px;
     padding-left: 20px;
@@ -143,3 +155,7 @@ h1 {
   .header {
       text-align: center;
   }
+
+#searchButton {
+    color: cornsilk
+}
