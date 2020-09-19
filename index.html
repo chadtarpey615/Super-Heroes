@@ -1,82 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   
-    <!--<script src="scripts.js"></script>-->
-    <link rel="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!--<script src="scripts.js"></script>-->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+  <link rel="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
 </head>
 
-<canvas id="canvas" width="800" height="200"></canvas>
 <body>
   <header>
+    <h1 class="top">Marvel SuperHero Search</h1>
+  </header>
+  
+    <div class="logo"></div>
     <div class="container">
-        <div class="jumbotron jumbotron-fluid;">
-          <h1>Superheros!!</h1>
-          <style>
-            h1 {text-align: center;}
-            p {text-align: center;}
-            div {text-align: center;}
-        </style>
 
-            
-        </div>
-    </div>  
-  </header>  
-    <div class="container">
-    <div class="card">
-      <div class="row">
-        <div class="col-lg-12"></div>
-        <input type="text" placeholder="Search..." name="search">
-            <button class="btn btn-basic btn-sm search-button" style="font-display: center;" id="searchButton">
-            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
-              <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
-            </svg>
-          </button>
-      </div>
-    </div> 
-    <div class="tab">
-      <div class="btn-group btn-group-lg">
-        <div class="row"></div>
-          <div class="col-lg-6"></div>
-            <div class="row"></div>
-              <div class="col-lg-6"></div>
-                <div class="row"></div>
-                  <div class="col-lg-6"></div>
-                    <div class="row"></div>
-                      <div class="col-lg-6"></div>
-        </div>
-         <!--button start-->
-        <button type="button" class="btn btn-info">Stats</button>
-        <button type="button" class="btn btn-info">Movies</button>
-        <button type="button" class="btn btn-info">Images</button>
-        <button type="button" class="btn btn-info">Comics</button>
-      </div>
-      <!--button end-->
-      </div>
+
     </div>
-      <!-- Tab content -->
-      <div id="openStats" class="Stats">
-      </div>
-      
-      <div id="openMovies" class="Movies">
-      </div>
-      
-      <div id="openImages" class="Images">
-      </div>  
-      <div id="openComics" class="Comics">
-      </div>     
+</header>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+
+
+
+  <!-- <div class="card"> -->
+    <!-- <div class="row"> -->
+      <!-- <div class="col-md-4"></div> -->
+
+
+
+      <div class="container"> 
+        <!-- <div class="card"> -->
+          <div class="row">
+             <div class="col-sm-4"></div>
+           
+            <input id="hero-search" type="text" placeholder="Search For A Marvel Character Here" name="search">
+
+            <button class="btn btn-basic btn-sm search-button" style="font-display: center;" id="searchButton">
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                <path fill-rule="evenodd"
+                  d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+              </svg>
+            </button>
+        
+          <!-- </div>
+        </div> -->
+        <!-- <div class="tab">
+          <div class="btn-group btn-group-lg">
+            <div class="row"></div>
+            <div class="col-lg-6"></div>
+            <div class="row"></div>
+            <div class="col-lg-6"></div>
+            <div class="row"></div>
+            <div class="col-lg-6"></div>
+            <div class="row"></div>
+            <div class="col-lg-6"></div>
+          </div>
+
+          
+        </div> -->
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+
+  </div>
+  </div>
+
+<div class="main-area">
+  <canvas id="canvas-image-blending" ></canvas>
+
+
+  <table id="stats" class="stats-input">
+
+  </table>
+
+  <div id="description" class="description">
+  </div>
+
+ 
+  <div id="giphy" class="giphy">
+
+      
+  </div>
+   
+  <div id="openMovies" class="movies">
+  </div>
+
+   
+    <div id="openImages" class="Images">
+    </div>
+
+    
+  
+   
+    <div id="openComics" class="Comics">
+    </div>
+
+    
+</div>
+
+
+
+
+ 
+      <div class="jumbotron jumbotron-fluid;">
+        <h1>Superheros!!</h1>
+        <!-- <style>
+          h1 {
+            text-align: center;
+          }
+
+          p {
+            text-align: center;
+          }
+
+          div {
+            text-align: center;
+          }
+        </style> -->
+
+
+      </div> 
 </body>
-</html>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+
+  <script src="logic.js"></script>
+  <script src="animate.js"></script>
+
