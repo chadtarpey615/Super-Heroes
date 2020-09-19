@@ -29,7 +29,7 @@ function searchComics(inputHero) {
         let newLine = $("<h2>").text(response.data.results[0].description)
         $(".description").append(name, newLine);
 
-        for(var k = 17; k < response.data.results[0].comics.items.length; k++) {
+        for(var k = 10; k < response.data.results[0].comics.items.length; k++) {
             let comics = $("<p>").text(response.data.results[0].comics.items[k].name)
             $(".Comics").append(comics)
         }
