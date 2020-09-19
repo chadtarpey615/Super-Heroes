@@ -3,7 +3,7 @@ var firstGranim = new Granim({
     direction: 'top-bottom',
     isPausedWhenNotInView: true,
     image : {
-        source: "./assets/camerica.jpeg",
+        source: "./assets/venomeyes.jpg",
         stretchMode: ["stretch", "stretch-if-bigger"],
         blendingMode: 'multiply'
     },
