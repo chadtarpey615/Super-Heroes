@@ -70,7 +70,6 @@ h1 {
    .description img{
         height: 300px ;
         width: 300px;
-        border: 10px solid deeppink;
   } 
    
 
@@ -80,6 +79,8 @@ h1 {
       font-size: small;
       margin-top: 10px;
       padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
   }
 
   .description h4 {
@@ -90,8 +91,10 @@ h1 {
   .stats-input {
      display: inline;
      color: white;
-     font-size: x-large;
+     font-size: medium;
      text-align: left;
+     padding-left: 10px;
+     padding-bottom: -300px;
 
   }
   
@@ -117,3 +120,21 @@ h1 {
       font-size: x-large;
   }
 
+  #searchButton {
+      color: cornsilk;
+  }
+
+  .movies {
+      padding-bottom: 200px;
+      padding-left: 50px;
+  }
+
+  .Comics {
+    text-align: left;
+    outline: auto;
+    font-size: small;
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
