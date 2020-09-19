@@ -40,6 +40,62 @@ h1 {
 .jumbotron {
     background-image: url("./assesst/image/superimage.jpg");
     background-size: cover;
+    display: block;
+  }
+
+  .main-area {
+      display: grid;
+      grid-gap: 20px;
+      grid-template-areas: 
+      'showcase showcase top-box-a'
+      'showcase showcase top-box-b'
+
+  }
+
+  .showcase {
+      grid-area: showcase;
+      display: flex;
+      flex-direction: column;
+      padding: 3rem;
+      box-shadow: var(--shadow);
+  }
+
+
+   .Images img{
+    
+  } 
+   
+
+  .description {
+      text-align: left;
+      outline: auto;
+      background-color: red;
+      font-size: small;
+  }
+
+  .description h4 {
+      text-align: center;
+      padding-bottom: 4px;
+  }
+
+  .stats-input {
+     display: inline;
+     color: white;
+
+  }
+  
+  .stats th {
+      outline: auto;
+      font-size: large;
+      outline: auto;
+
+  }
+
+  .giphy img {
+      padding-bottom: 10px;
+      outline: auto;
+      display: table-column-group;
+
   }
   
   
