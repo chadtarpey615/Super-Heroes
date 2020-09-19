@@ -12,14 +12,13 @@ function searchComics(inputHero) {
 
     var movieUrl = " https://www.omdbapi.com/?t=" + inputHero + "&apikey=86e6eaa8"
 
-   // var queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=trilogy";
 
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
+        //console.log(response);
 
         $(".description").empty();
         $(".Comics").empty()
@@ -34,7 +33,6 @@ function searchComics(inputHero) {
             let comics = $("<p>").text(response.data.results[0].comics.items[k].name)
             $(".Comics").append(comics)
         }
-       console.log( response.data.results[0].comics.items.length)
 
     })
 
@@ -43,14 +41,10 @@ function searchComics(inputHero) {
         method: "GET"
     }).then(function (resp) {
         console.log(resp);
-        console.log(resp.results[1].image.url )
 
-       // let results = resp.results;
-       // $(".Stats").empty()
         $(".Images").empty()
         $(".stats-input").empty();
 
-        //let header = $("<header>").text("Your SuperHero Stats");
         let title1 = $("<th>").text("Attribute");
         let title2 = $("<th>").text("Value");
         let height = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height));
@@ -64,20 +58,14 @@ function searchComics(inputHero) {
         let stat5 = $("<tr>").text("Speed").append($("<td>").text(resp.results[0].powerstats.speed));
         let stat6 = $("<tr>").text("Strength").append($("<td>").text(resp.results[0].powerstats.strength));
 
-        // let stat1 = $("<td>").text("Combat: " + resp.results[0].powerstats.combat)
-        // let stat2 = $("<td>").text("Durability: " + resp.results[0].powerstats.durability)
-        // let stat3 = $("<td>").text("Intelligence: " + resp.results[0].powerstats.intelligence)
-        // let stat4 = $("<td>").text("Power: " + resp.results[0].powerstats.power)
-        // let stat5 = $("<td>").text("Speed: " + resp.results[0].powerstats.speed)
-        // let stat6 = $("<td>").text("Strength: " + resp.results[0].powerstats.strength)
+  
         
-        //$(".Stats").append(header)
         $(".stats-input").append(title1, title2);
         $(".stats-input").append(stat1, stat2,stat3,stat4,stat5,stat6, height, weight);
 
-
-      //  for (var i = 0; i < resp.results.length; i++){
-            let newImage = $("<img>").attr( "src",  resp.results[0].image.url );
+        console.log(resp.results[0].image.url);
+       //for (var i = 0; i < resp.results.length; i++){
+            let newImage = $("<img>").attr( "src",  resp.results[0].image.url);
            $(".description").append(newImage)
         //}
 
@@ -108,6 +96,21 @@ function searchComics(inputHero) {
         method: "GET"
     }).then(function (response2) {
         console.log(response2);
+
+
+        $(".movies").empty();
+        let poster = $("<img>").attr("src", response2.Poster);
+
+        let movieTitle = $("<h4>").text("Movie: " + response2.Title);
+        let year = $("<h4>").text("Released Year: " + response2.Year);
+        let rated = $("<h4>").text("Rated: " + response2.Rated);
+        let rank = $("<h4>").text("IMDB Rating: " + response2.imdbRating);
+
+
+
+        $(".movies").append(poster, movieTitle, year, rated, rank);
+
+
 
     })
 }
