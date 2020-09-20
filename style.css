@@ -121,7 +121,6 @@ body{
 
   .giphy img {
       padding-bottom: 10px;
-      outline: auto;
       display: table-column-group;
 
   }
@@ -137,18 +136,16 @@ body{
   }
 
   .movies {
-      padding-top: -300px;
+      margin-top: -500px;
       padding-bottom: 600px;
       padding-left: 50px;
   }
 
   .Comics {
-    text-align: left;
-    outline: auto;
-    border-color: red;
+    text-align: center;
     font-size: medium;
     margin-top: 10px;
-    padding-top: 20px;
+    margin-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -159,4 +156,8 @@ body{
 
 #searchButton {
     color: cornsilk
+}
+
+#comicsHeader {
+    font-size: xx-large;
 }
