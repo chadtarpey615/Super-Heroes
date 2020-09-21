@@ -86,22 +86,15 @@ body{
   }
 
 
-   .description img{
-        height: 300px ;
-        width: 300px;
-        position: relative;
-        top: -2%;        
-  } 
-   
-
   .description {
       text-align: left;
-      outline: auto;
       font-size: small;
       margin-top: 10px;
-      padding: 20px 20px;
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+  }
       
-    }
 
   .description h4 {
       text-align: center;
@@ -111,8 +104,11 @@ body{
   .stats-input {
      display: inline;
      color: white;
-     font-size: medium;
+     font-size: large;
      text-align: left;
+     padding-left: 30px;
+     padding-bottom: -600px;
+     padding-right: -200px;
 
   }
   
@@ -125,7 +121,6 @@ body{
 
   .giphy img {
       padding-bottom: 10px;
-      outline: auto;
       display: table-column-group;
 
   }
@@ -136,6 +131,33 @@ body{
       font-size: x-large;
   }
 
+  #searchButton {
+      color: cornsilk;
+  }
+
+  .movies {
+      margin-top: -500px;
+      padding-bottom: 600px;
+      padding-left: 50px;
+  }
+
+  .Comics {
+    text-align: center;
+    font-size: medium;
+    margin-top: 10px;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header {
+      text-align: center;
+  }
+
 #searchButton {
     color: cornsilk
+}
+
+#comicsHeader {
+    font-size: xx-large;
 }
