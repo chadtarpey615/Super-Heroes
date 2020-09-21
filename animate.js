@@ -25,7 +25,7 @@ var firstGranim = new Granim({
 //     direction: 'top-bottom',
 //     isPausedWhenNotInView: true,
 //     image : {
-//         source: "./assets/venomeyes.jpg",
+//         source: "./assets/spidey.jpeg",
 //         stretchMode: ["stretch", "stretch-if-bigger"],
 //         blendingMode: 'multiply'
 //     },
@@ -42,4 +42,15 @@ var firstGranim = new Granim({
 //     }
 // });
 
+
+$(function(){
+    var slideLeft = "animate__animated animate__slideInLeft";
+    var effectsEnd = "animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd";
+
+    $(".stats-input").load(function(){
+        $(this).addClass(slideLeft).one(effectsEnd, function(){
+            $(this).removeClass(slideLeft);
+        })
+    })
+});
 

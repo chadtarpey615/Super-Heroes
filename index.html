@@ -9,9 +9,12 @@
 
   <!--<script src="scripts.js"></script>-->
   <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
-  <link rel="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
   <link rel="stylesheet" type="text/css" href="style.css">
 
 
@@ -19,7 +22,7 @@
 
 <body>
   <header>
-    <h1 class="top">Marvel SuperHero Search</h1>
+    <h1 class="top animate__animated animate__slideInLeft">Marvel SuperHero Search</h1>
   </header>
   
     <div class="logo"></div>
@@ -45,15 +48,21 @@
            
             <input id="hero-search" type="text" placeholder="Search For A Marvel Character Here" name="search">
 
+            <button class="btn btn-basic btn-sm search-button  animate__animated  animate__bounce" style="font-display: center;" id="searchButton">
+              <!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+
+
             <button class="btn btn-basic btn-sm search-button" style="font-display: center;" id="searchButton">
               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
+
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                   d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
                 <path fill-rule="evenodd"
                   d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-              </svg>
+              </svg> -->
             </button>
+
       </div>
 
 
@@ -72,15 +81,18 @@
   <canvas id="canvas-image-blending" ></canvas>
 
 
-  <table id="stats" class="stats-input">
+  <table id="stats" class="stats-input  animate__animated animate__slideInLeft">
 
   </table>
 
-  <div id="description" class="description">
+  <div id="description" class="description animate__animated animate__fadeInDown ">
   </div>
 
  
-  <div id="giphy" class="giphy">
+  <div id="giphy" class="giphy animate__animated animate__slideInRight">
+
+      
+
   </div>
 
   <div id="openMovies" class="movies">
@@ -102,6 +114,20 @@
 
  
       <div class="jumbotron jumbotron-fluid;">
+        <h1 class= "">Superheros!!</h1>
+        <!-- <style>
+          h1 {
+            text-align: center;
+          }
+
+          p {
+            text-align: center;
+          }
+
+          div {
+            text-align: center;
+          }
+        </style> -->
         <h1>Created by Gina, Todd, Chad, and Kevin</h1>
 
 
