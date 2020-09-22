@@ -43,14 +43,8 @@ var firstGranim = new Granim({
 // });
 
 
-$(function(){
-    var slideLeft = "animate__animated animate__slideInLeft";
-    var effectsEnd = "animationend oAnimationEnd mozAnimationEnd webkitAnimationEnd";
-
-    $(".stats-input").load(function(){
-        $(this).addClass(slideLeft).one(effectsEnd, function(){
-            $(this).removeClass(slideLeft);
-        })
-    })
-});
-
+// $("#searchButton").click(function(){
+//     $("#stats").addClass(slideLeft).one(effectsEnd, function() {
+//         $("#stats").removeClass(slideLeft);
+//     })
+//     })
