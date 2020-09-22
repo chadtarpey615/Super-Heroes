@@ -26,20 +26,75 @@ function searchComics(inputHero) {
         $(".description").empty();
 
 
-        let name = $("<h4>").text(resp.results[0].name)
+        let name;
+        if(resp.results[1].name !== undefined) {
+            name = $("<h4>").text(resp.results[1].name);
+
+        } else {
+            name = $("<h4>").text(resp.results[0].name);
+
+        }
 
         let title1 = $("<th>").text("Power Stats");
-       // let title2 = $("<th>").text("Value");
-        let height = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height));
-        let weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[0].appearance.weight));
-        let race = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
-        let fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]));
-        let birthPlace = $("<tr>").text("Birthplace").append($("<td>").text(resp.results[0].biography["place-of-birth"]));
+
+        let height;
+
+        if(resp.results[1].appearance.height[0] !== undefined) {
+            height = $("<tr>").text("Height").append($("<td>").text(resp.results[1].appearance.height[0]));
+            
+        } else if(resp.results[0].appearance.height[0] !== undefined){
+            height = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height[0]));
+
+        }else {
+            height = $("<tr>").text("Height").append($("<td>").text("N/A"));
+
+        }
+
+        let weight
+
+        if(resp.results[1].appearance.weight !== undefined){
+           weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[1].appearance.weight));
+
+        } else {
+           weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[0].appearance.weight));
+            
+        }
+
+        let race
+        if(resp.results[1].appearance.race !== undefined) {
+           height = $("<tr>").text("Race").append($("<td>").text(resp.results[1].appearance.race));
+
+        }else{
+           height = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
+
+        }
+
+        let fullName 
+
+        if(resp.results[1].biography["full-name"] !== undefined) {
+           fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[1].biography["full-name"]));
+
+        }else {
+           fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]));
+
+        }
 
 
+        let birthPlace;
 
+        if (resp.results[0].biography["place-of-birth"] !== "-") {
+            birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text(resp.results[0].biography["place-of-birth"]));
 
-        $(".description").append(name);
+        } else if (resp.results[1].biography["place-of-birth"]){
+           birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text(resp.results[1].biography["place-of-birth"]));
+
+        }else {
+            birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text("N/A"));
+
+        }
+        
+
+         $(".description").append(name);
 
         let stat1 = $("<tr>").text("Combat").append($("<td>").text(resp.results[0].powerstats.combat));
         let stat2 = $("<tr>").text("Durability").append($("<td>").text(resp.results[0].powerstats.durability));
@@ -54,12 +109,27 @@ function searchComics(inputHero) {
         $(".stats-input").append(title1);
         $(".stats-input").append(fullName, race, birthPlace, stat1, stat2,stat3,stat4,stat5,stat6, height, weight);
 
+         $("#stats").show();
 
-       // console.log(resp.results[0].image.url);
-       //for (var i = 0; i < resp.results.length; i++){
-            let newImage = $("<img>").attr( "src",  resp.results[1].image.url);
-           $(".description").append(newImage)
-        //}
+
+        let newImage;
+
+           if (resp.results[1] !== undefined) {
+             newImage = $("<img>").attr( "src",  resp.results[1].image.url);
+
+           } else if(resp.results[0] !== undefined) {
+              newImage = $("<img>").attr( "src",  resp.results[0].image.url);
+
+           }else {
+              newImage = $("<img>").attr( "src",  "assets/spidey.jpeg");
+
+           }
+            $(".description").append(newImage);
+
+
+            $("#description").show()
+
+
 
        
         
@@ -79,6 +149,8 @@ function searchComics(inputHero) {
         for(var g = 7; g <  resp1.data.length; g++){
         let newGif = $("<img>").attr("src", resp1.data[g].images.original.url)
         $(".giphy").append(newGif);
+    $("#giphy").show();
+
         }
 
     })
@@ -102,6 +174,7 @@ function searchComics(inputHero) {
 
         $(".movies").append(poster, movieTitle, year, rated, rank);
 
+        $("#openMovies").show();
 
 
     })
@@ -118,23 +191,28 @@ $("#searchButton").on("click", function() {
 
     let hero = $("#hero-search").val()
     searchComics(hero);
+    $("#stats").hide();
+    $("#description").hide()
+    $("#giphy").hide();
+    $("#openMovies").hide();
+
 
 });
 
 
-$(function () {
-    var $image = $('#slideshow').children('img');
-    $image.css('top','0px');
-    function animate_img() {
-        if ($image.css('top') == '0px') {
-            $image.animate({top: '-1000px'}, 5000, function () {
-                animate_img();
-            });
-        } else {
-            $image.animate({top: '0px'}, 5000, function () {
-                animate_img();
-            });
-        }
-    }
-    animate_img();
-});
+// $(function () {
+//     var $image = $('#slideshow').children('img');
+//     $image.css('top','0px');
+//     function animate_img() {
+//         if ($image.css('top') == '0px') {
+//             $image.animate({top: '-1000px'}, 5000, function () {
+//                 animate_img();
+//             });
+//         } else {
+//             $image.animate({top: '0px'}, 5000, function () {
+//                 animate_img();
+//             });
+//         }
+//     }
+//     animate_img();
+// });
