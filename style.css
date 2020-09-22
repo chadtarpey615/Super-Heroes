@@ -143,12 +143,17 @@ body {
     -webkit-animation-delay: 1s;
     outline: auto;
     outline-color: white;
+    
   }
   .stats th {
+      
     outline: auto;
     font-size: large;
     outline: auto;
+    
   }
+
+ 
   .giphy {
     -webkit-animation-delay: 1s;
     outline: auto;
@@ -201,3 +206,4 @@ body {
     color: white;
     size: 3x;
   }
+

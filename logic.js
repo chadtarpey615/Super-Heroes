@@ -14,7 +14,7 @@ function searchComics(inputHero) {
 
 
 
-    
+
     $.ajax({
         url: superHeroURL,
         method: "GET"
@@ -29,7 +29,7 @@ function searchComics(inputHero) {
         let name = $("<h4>").text(resp.results[0].name)
 
         let title1 = $("<th>").text("Power Stats");
-       // let title2 = $("<th>").text("Value");
+        // let title2 = $("<th>").text("Value");
         let height = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height));
         let weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[0].appearance.weight));
         let race = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
@@ -48,24 +48,25 @@ function searchComics(inputHero) {
         let stat5 = $("<tr>").text("Speed").append($("<td>").text(resp.results[0].powerstats.speed));
         let stat6 = $("<tr>").text("Strength").append($("<td>").text(resp.results[0].powerstats.strength));
 
-  
-           
-        
+
+
+
         $(".stats-input").append(title1);
-        $(".stats-input").append(fullName, race, birthPlace, stat1, stat2,stat3,stat4,stat5,stat6, height, weight);
+        $(".stats-input").append(fullName, race, birthPlace, stat1, stat2, stat3, stat4, stat5, stat6, height, weight);
 
+        let newImage;
 
-       // console.log(resp.results[0].image.url);
-       //for (var i = 0; i < resp.results.length; i++){
-            let newImage = $("<img>").attr( "src",  resp.results[1].image.url);
-           $(".description").append(newImage)
-        //}
+        if (resp.results[1] !== undefined) {
+            newImage = $("<img>").attr("src", resp.results[1].image.url);
 
-       
-        
-        
+        } else if (resp.results[0] !== undefined) {
+            newImage = $("<img>").attr("src", resp.results[0].image.url);
+        } else {
+            newImage = $("<img>").attr("src", "assets/marvelvsdc.jpg");
+        }
+        $(".description").append(newImage)
 
-
+        $("#stats").show();
     })
 
 
@@ -76,9 +77,9 @@ function searchComics(inputHero) {
         //console.log(resp1);
         $(".giphy").empty();
 
-        for(var g = 7; g <  resp1.data.length; g++){
-        let newGif = $("<img>").attr("src", resp1.data[g].images.original.url)
-        $(".giphy").append(newGif);
+        for (var g = 7; g < resp1.data.length; g++) {
+            let newGif = $("<img>").attr("src", resp1.data[g].images.original.url)
+            $(".giphy").append(newGif);
         }
 
     })
@@ -106,7 +107,7 @@ function searchComics(inputHero) {
 
     })
 
-   
+
 }
 
 
@@ -114,24 +115,25 @@ function searchComics(inputHero) {
 
 
 
-$("#searchButton").on("click", function() {
+$("#searchButton").on("click", function () {
 
     let hero = $("#hero-search").val()
     searchComics(hero);
-
+   $("#stats").hide();
+   
 });
 
 
 $(function () {
     var $image = $('#slideshow').children('img');
-    $image.css('top','0px');
+    $image.css('top', '0px');
     function animate_img() {
         if ($image.css('top') == '0px') {
-            $image.animate({top: '-1000px'}, 5000, function () {
+            $image.animate({ top: '-1000px' }, 5000, function () {
                 animate_img();
             });
         } else {
-            $image.animate({top: '0px'}, 5000, function () {
+            $image.animate({ top: '0px' }, 5000, function () {
                 animate_img();
             });
         }
