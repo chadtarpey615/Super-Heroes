@@ -67,6 +67,9 @@ function searchComics(inputHero) {
         $(".description").append(newImage)
 
         $("#stats").show();
+        $("#description").show();
+        
+        
     })
 
 
@@ -81,7 +84,7 @@ function searchComics(inputHero) {
             let newGif = $("<img>").attr("src", resp1.data[g].images.original.url)
             $(".giphy").append(newGif);
         }
-
+        $("#giphy").show();
     })
 
     $.ajax({
@@ -99,20 +102,10 @@ function searchComics(inputHero) {
         let rated = $("<h5>").text("Rated: " + response2.Rated);
         let rank = $("<h5>").text("IMDB Rating: " + response2.imdbRating);
 
-
-
         $(".movies").append(poster, movieTitle, year, rated, rank);
-
-
-
+        $("#openMovies").show();
     })
-
-
 }
-
-
-
-
 
 
 $("#searchButton").on("click", function () {
@@ -120,6 +113,9 @@ $("#searchButton").on("click", function () {
     let hero = $("#hero-search").val()
     searchComics(hero);
    $("#stats").hide();
+   $("#description").hide();
+   $("#giphy").hide();
+   $("#openMovies").hide();
    
 });
 
