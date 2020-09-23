@@ -26,72 +26,81 @@ function searchComics(inputHero) {
         $(".description").empty();
 
 
-        let name;
-        if(resp.results[1].name !== undefined) {
-            name = $("<h4>").text(resp.results[1].name);
+        // let name;
+        // if(resp.results[1] !== false) {
+        //     name = $("<h4>").text(resp.results[1].name);
 
-        } else {
-            name = $("<h4>").text(resp.results[0].name);
+        // } else if (resp.results[0] !== false){
+        //     name = $("<h4>").text(resp.results[0].name);
 
-        }
-
+        // }
+        let name = $("<h4>").text(resp.results[0].name)
+        
         let title1 = $("<th>").text("Power Stats");
 
-        let height;
+        let height; 
 
-        if(resp.results[1].appearance.height[0] !== undefined) {
-            height = $("<tr>").text("Height").append($("<td>").text(resp.results[1].appearance.height[0]));
-            
-        } else if(resp.results[0].appearance.height[0] !== undefined){
-            height = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height[0]));
-
-        }else {
-            height = $("<tr>").text("Height").append($("<td>").text("N/A"));
-
-        }
-
-        let weight
-
-        if(resp.results[1].appearance.weight !== undefined){
-           weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[1].appearance.weight));
+        if(resp.results[0].appearance.height[0] !== "-") {
+            height =  $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height[0]));
 
         } else {
-           weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[0].appearance.weight));
+            height = $("<tr>").text("Height").append($("<td>").text(resp.results[1].appearance.height[0]));
+          
+        }
+        
+           let weight; 
+           
+           if(resp.results[0].appearance.weight[0] !== "- lb") {
+            weight =  $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.weight[0]));
             
-        }
-
-        let race
-        if(resp.results[1].appearance.race !== undefined) {
-           height = $("<tr>").text("Race").append($("<td>").text(resp.results[1].appearance.race));
-
-        }else{
-           height = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
-
-        }
-
-        let fullName 
-
-        if(resp.results[1].biography["full-name"] !== undefined) {
-           fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[1].biography["full-name"]));
-
-        }else {
-           fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]));
-
+        } else {
+            weight = $("<tr>").text("Height").append($("<td>").text(resp.results[1].appearance.weight[0]));
+          
         }
 
 
-        let birthPlace;
+        let race = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
+        // if(resp.results[1].appearance.race !== false) {
+        //    race = $("<tr>").text("Race").append($("<td>").text(resp.results[1].appearance.race));
 
-        if (resp.results[0].biography["place-of-birth"] !== "-") {
-            birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text(resp.results[0].biography["place-of-birth"]));
+        // }else{
+        //    race = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
 
-        } else if (resp.results[1].biography["place-of-birth"]){
-           birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text(resp.results[1].biography["place-of-birth"]));
+        // }
 
-        }else {
-            birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text("N/A"));
+        let fullName  = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]))
 
-        }
+        // if(resp.results[1].biography["full-name"] !== false) {
+        //    fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[1].biography["full-name"]));
+
+        // }else {
+        //    fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]));
+
+        // }
+
+
+        // let birthPlace; 
+        
+        // if(resp.results[0].biography["place-of-birth"] !== "-") {
+        //     birthPlace = $("<tr>").text("Birthplace").append($("<td>").text(resp.results[0].biography["place-of-birth"]))
+
+        // }else if(resp.results[1].biography["place-of-birth"] !== undefined) {
+        //     birthPlace = $("<tr>").text("Birthplace").append($("<td>").text(resp.results[1].biography["place-of-birth"]))
+
+        // }else {
+        //     birthPlace = $("<tr>").text("Birthplace").append($("<td>").text("N/A"));
+        // }
+
+        // if (resp.results[0].biography["place-of-birth"] !== "-") {
+        //     birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text(resp.results[0].biography["place-of-birth"]));
+
+        // } else if (resp.results[1].biography["place-of-birth"]){
+        //    birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text(resp.results[1].biography["place-of-birth"]));
+
+        // }else {
+        //     birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text("N/A"));
+
+        // }
         
 
          $(".description").append(name);
@@ -107,7 +116,7 @@ function searchComics(inputHero) {
            
         
         $(".stats-input").append(title1);
-        $(".stats-input").append(fullName, race, birthPlace, stat1, stat2,stat3,stat4,stat5,stat6, height, weight);
+        $(".stats-input").append(fullName, race, stat1, stat2,stat3,stat4,stat5,stat6, height, weight);
 
          $("#stats").show();
 
@@ -200,19 +209,3 @@ $("#searchButton").on("click", function() {
 });
 
 
-// $(function () {
-//     var $image = $('#slideshow').children('img');
-//     $image.css('top','0px');
-//     function animate_img() {
-//         if ($image.css('top') == '0px') {
-//             $image.animate({top: '-1000px'}, 5000, function () {
-//                 animate_img();
-//             });
-//         } else {
-//             $image.animate({top: '0px'}, 5000, function () {
-//                 animate_img();
-//             });
-//         }
-//     }
-//     animate_img();
-// });
