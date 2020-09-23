@@ -16,7 +16,7 @@ function searchComics(inputHero) {
  
         
 
-    
+
     $.ajax({
         url: superHeroURL,
         method: "GET"
@@ -33,6 +33,8 @@ function searchComics(inputHero) {
         let name = $("<h4>").text(resp.results[0].name)
         
         let title1 = $("<th>").text("Power Stats");
+
+
 
         let height; 
 
@@ -71,10 +73,11 @@ function searchComics(inputHero) {
         let stat5 = $("<tr>").text("Speed").append($("<td>").text(resp.results[0].powerstats.speed));
         let stat6 = $("<tr>").text("Strength").append($("<td>").text(resp.results[0].powerstats.strength));
 
-  
-           
-        
+
+
+
         $(".stats-input").append(title1);
+
         $(".stats-input").append(fullName, race, stat1, stat2,stat3,stat4,stat5,stat6, height, weight);
 
          $("#stats").show();
@@ -99,6 +102,7 @@ function searchComics(inputHero) {
 
 
 
+
     })
 
 
@@ -114,8 +118,9 @@ function searchComics(inputHero) {
         $(".giphy").append(newGif);
     $("#giphy").show();
 
-        }
 
+        }
+        $("#giphy").show();
     })
 
     $.ajax({
@@ -133,24 +138,18 @@ function searchComics(inputHero) {
         let rated = $("<h5>").text("Rated: " + response2.Rated);
         let rank = $("<h5>").text("IMDB Rating: " + response2.imdbRating);
 
-
-
         $(".movies").append(poster, movieTitle, year, rated, rank);
+
 
         $("#openMovies").show();
 
 
-    })
 
-   
+    })
 }
 
 
-
-
-
-
-$("#searchButton").on("click", function() {
+$("#searchButton").on("click", function () {
 
     let hero;
     if($("#hero-search").val() === "spiderman") {
@@ -160,6 +159,7 @@ $("#searchButton").on("click", function() {
 
     }
     searchComics(hero);
+
     $("#stats").hide();
     $("#description").hide()
     $("#giphy").hide();
@@ -167,5 +167,6 @@ $("#searchButton").on("click", function() {
 
 
 });
+
 
 
