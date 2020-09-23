@@ -83,10 +83,10 @@ function searchComics(inputHero) {
         let newImage;
 
            if (resp.results[1] !== undefined) {
-             newImage = $("<img>").attr( "src",  resp.results[1].image.url);
+             newImage = $("<img>").attr( "src",  resp.results[1].image.url).attr("alt", "A picture of " + resp.results[0].name);
 
            } else if(resp.results[0] !== undefined) {
-              newImage = $("<img>").attr( "src",  resp.results[0].image.url);
+              newImage = $("<img>").attr( "src",  resp.results[0].image.url).attr("alt", "A picture of " + resp.results[0].name);
 
            }else {
               newImage = $("<img>").attr( "src",  "assets/spidey.jpeg");
