@@ -13,6 +13,8 @@ function searchComics(inputHero) {
     var movieUrl = " https://www.omdbapi.com/?t=" + inputHero + "&apikey=86e6eaa8"
 
 
+ 
+        
 
 
     $.ajax({
@@ -21,25 +23,48 @@ function searchComics(inputHero) {
     }).then(function (resp) {
         console.log(resp);
 
+      
         $(".Images").empty()
         $(".stats-input").empty();
         $(".description").empty();
 
 
+      
         let name = $("<h4>").text(resp.results[0].name)
-
+        
         let title1 = $("<th>").text("Power Stats");
-        // let title2 = $("<th>").text("Value");
-        let height = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height));
-        let weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[0].appearance.weight));
+
+
+
+        let height; 
+
+        if(resp.results[0].appearance.height[0] !== "-") {
+            height =  $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height[0]));
+
+        } else {
+            height = $("<tr>").text("Height").append($("<td>").text(resp.results[1].appearance.height[0]));
+          
+        }
+        
+           let weight; 
+           
+           if(resp.results[0].appearance.weight[0] !== "- lb") {
+            weight =  $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.weight[0]));
+            
+        } else {
+            weight = $("<tr>").text("Height").append($("<td>").text(resp.results[1].appearance.weight[0]));
+          
+        }
+
+
         let race = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
-        let fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]));
-        let birthPlace = $("<tr>").text("Birthplace").append($("<td>").text(resp.results[0].biography["place-of-birth"]));
+        
 
+        let fullName  = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]))
 
+        
 
-
-        $(".description").append(name);
+         $(".description").append(name);
 
         let stat1 = $("<tr>").text("Combat").append($("<td>").text(resp.results[0].powerstats.combat));
         let stat2 = $("<tr>").text("Durability").append($("<td>").text(resp.results[0].powerstats.durability));
@@ -52,24 +77,32 @@ function searchComics(inputHero) {
 
 
         $(".stats-input").append(title1);
-        $(".stats-input").append(fullName, race, birthPlace, stat1, stat2, stat3, stat4, stat5, stat6, height, weight);
+
+        $(".stats-input").append(fullName, race, stat1, stat2,stat3,stat4,stat5,stat6, height, weight);
+
+         $("#stats").show();
+
 
         let newImage;
 
-        if (resp.results[1] !== undefined) {
-            newImage = $("<img>").attr("src", resp.results[1].image.url);
+           if (resp.results[1] !== undefined) {
+             newImage = $("<img>").attr( "src",  resp.results[1].image.url).attr("alt", "A picture of " + resp.results[0].name);
 
-        } else if (resp.results[0] !== undefined) {
-            newImage = $("<img>").attr("src", resp.results[0].image.url);
-        } else {
-            newImage = $("<img>").attr("src", "assets/marvelvsdc.jpg");
-        }
-        $(".description").append(newImage)
+           } else if(resp.results[0] !== undefined) {
+              newImage = $("<img>").attr( "src",  resp.results[0].image.url).attr("alt", "A picture of " + resp.results[0].name);
 
-        $("#stats").show();
-        $("#description").show();
-        
-        
+           }else {
+              newImage = $("<img>").attr( "src",  "assets/spidey.jpeg");
+
+           }
+            $(".description").append(newImage);
+
+
+            $("#description").show()
+
+
+
+
     })
 
 
@@ -80,9 +113,12 @@ function searchComics(inputHero) {
         //console.log(resp1);
         $(".giphy").empty();
 
-        for (var g = 7; g < resp1.data.length; g++) {
-            let newGif = $("<img>").attr("src", resp1.data[g].images.original.url)
-            $(".giphy").append(newGif);
+        for(var g = 7; g <  resp1.data.length; g++){
+        let newGif = $("<img>").attr("src", resp1.data[g].images.original.url)
+        $(".giphy").append(newGif);
+    $("#giphy").show();
+
+
         }
         $("#giphy").show();
     })
@@ -103,36 +139,34 @@ function searchComics(inputHero) {
         let rank = $("<h5>").text("IMDB Rating: " + response2.imdbRating);
 
         $(".movies").append(poster, movieTitle, year, rated, rank);
+
+
         $("#openMovies").show();
+
+
+
     })
 }
 
 
 $("#searchButton").on("click", function () {
 
-    let hero = $("#hero-search").val()
-    searchComics(hero);
-   $("#stats").hide();
-   $("#description").hide();
-   $("#giphy").hide();
-   $("#openMovies").hide();
-   
-});
+    let hero;
+    if($("#hero-search").val() === "spiderman") {
+        hero = "spider-man";
+    } else {
+       hero =  $("#hero-search").val()
 
-
-$(function () {
-    var $image = $('#slideshow').children('img');
-    $image.css('top', '0px');
-    function animate_img() {
-        if ($image.css('top') == '0px') {
-            $image.animate({ top: '-1000px' }, 5000, function () {
-                animate_img();
-            });
-        } else {
-            $image.animate({ top: '0px' }, 5000, function () {
-                animate_img();
-            });
-        }
     }
-    animate_img();
+    searchComics(hero);
+
+    $("#stats").hide();
+    $("#description").hide()
+    $("#giphy").hide();
+    $("#openMovies").hide();
+
+
 });
+
+
+
