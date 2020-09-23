@@ -33,3 +33,6 @@ Made by:
   Gina
 
   Kevin
+  
+![Capture](https://user-images.githubusercontent.com/66528327/94084711-ce53ac80-fdcb-11ea-8fda-a76e7a4ebc8d.PNG)
+![Capture2](https://user-images.githubusercontent.com/66528327/94084718-d14e9d00-fdcb-11ea-937a-625f205e9bfb.PNG)
