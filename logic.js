@@ -13,6 +13,8 @@ function searchComics(inputHero) {
     var movieUrl = " https://www.omdbapi.com/?t=" + inputHero + "&apikey=86e6eaa8"
 
 
+ 
+        
 
     
     $.ajax({
@@ -21,19 +23,13 @@ function searchComics(inputHero) {
     }).then(function (resp) {
         console.log(resp);
 
+      
         $(".Images").empty()
         $(".stats-input").empty();
         $(".description").empty();
 
 
-        // let name;
-        // if(resp.results[1] !== false) {
-        //     name = $("<h4>").text(resp.results[1].name);
-
-        // } else if (resp.results[0] !== false){
-        //     name = $("<h4>").text(resp.results[0].name);
-
-        // }
+      
         let name = $("<h4>").text(resp.results[0].name)
         
         let title1 = $("<th>").text("Power Stats");
@@ -60,47 +56,10 @@ function searchComics(inputHero) {
 
 
         let race = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
-        // if(resp.results[1].appearance.race !== false) {
-        //    race = $("<tr>").text("Race").append($("<td>").text(resp.results[1].appearance.race));
-
-        // }else{
-        //    race = $("<tr>").text("Race").append($("<td>").text(resp.results[0].appearance.race));
-
-        // }
+        
 
         let fullName  = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]))
 
-        // if(resp.results[1].biography["full-name"] !== false) {
-        //    fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[1].biography["full-name"]));
-
-        // }else {
-        //    fullName = $("<tr>").text("Full-Name").append($("<td>").text(resp.results[0].biography["full-name"]));
-
-        // }
-
-
-        // let birthPlace; 
-        
-        // if(resp.results[0].biography["place-of-birth"] !== "-") {
-        //     birthPlace = $("<tr>").text("Birthplace").append($("<td>").text(resp.results[0].biography["place-of-birth"]))
-
-        // }else if(resp.results[1].biography["place-of-birth"] !== undefined) {
-        //     birthPlace = $("<tr>").text("Birthplace").append($("<td>").text(resp.results[1].biography["place-of-birth"]))
-
-        // }else {
-        //     birthPlace = $("<tr>").text("Birthplace").append($("<td>").text("N/A"));
-        // }
-
-        // if (resp.results[0].biography["place-of-birth"] !== "-") {
-        //     birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text(resp.results[0].biography["place-of-birth"]));
-
-        // } else if (resp.results[1].biography["place-of-birth"]){
-        //    birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text(resp.results[1].biography["place-of-birth"]));
-
-        // }else {
-        //     birthPlace =  $("<tr>").text("Birthplace").append($("<td>").text("N/A"));
-
-        // }
         
 
          $(".description").append(name);
@@ -138,11 +97,6 @@ function searchComics(inputHero) {
 
             $("#description").show()
 
-
-
-       
-        
-        
 
 
     })
@@ -198,7 +152,13 @@ function searchComics(inputHero) {
 
 $("#searchButton").on("click", function() {
 
-    let hero = $("#hero-search").val()
+    let hero;
+    if($("#hero-search").val() === "spiderman") {
+        hero = "spider-man";
+    } else {
+       hero =  $("#hero-search").val()
+
+    }
     searchComics(hero);
     $("#stats").hide();
     $("#description").hide()

@@ -100,6 +100,7 @@ body {
     height: 100%;
     width: 300%;
     animation: slideshow 10s linear infinite;
+    margin-top: 10px;
   }
   @keyframes slideshow {
     0% {
