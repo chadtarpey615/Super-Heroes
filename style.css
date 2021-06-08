@@ -199,6 +199,8 @@ h2 {
 .movies {
     -webkit-animation-delay: 1s;
     font-size: small;
+    text-align: center;
+    padding: 20 px;
     outline: auto;
     outline-color: white;
 }
