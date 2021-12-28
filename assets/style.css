@@ -1,3 +1,5 @@
+
+
 body {
     margin: 0;
     padding: 0;
@@ -9,41 +11,41 @@ body {
     font-family: fantasy;
     background-color: black;
     border: cornsilk;
-    font-family: "Bangers", cursive;
+    font-family: 'Bangers', cursive;
     font-size: 16px;
-}
-h1 {
+  }
+  h1 {
     padding-top: 4rem;
     font-family: "Bangers", cursive;
     font-size: 10rem;
     color: red;
     text-shadow: -10px 8px yellow;
     line-height: 1;
-    -ms-transform: skewY(-5deg); /* IE 9 compatibility */
+    -ms-transform: skewY(-5deg);/* IE 9 compatibility */
     transform: skewY(-5deg);
-    margin-top: 0.75rem;
+    margin-top: .75rem;
     -webkit-text-stroke: 5px blue;
-}
-#dc {
+  }
+  #dc {
     padding-top: 4rem;
     font-family: "Bangers", cursive;
     font-size: 10rem;
     color: yellow;
     text-shadow: -10px 8px gray;
     line-height: 1;
-    -ms-transform: skewY(-5deg); /* IE 9 compatibility */
+    -ms-transform: skewY(-5deg);/* IE 9 compatibility */
     transform: skewY(-5deg);
-    margin-top: 0.75rem;
+    margin-top: .75rem;
     -webkit-text-stroke: 5px black;
-}
-h1 {
+  }
+  h1 {
     text-align: center;
-}
-.top {
+  }
+  .top {
     padding-top: 5%;
     -webkit-animation-delay: 1s;
-}
-#hero-search {
+  }
+  #hero-search {
     font-family: "Bangers", cursive;
     font-size: xx-large;
     color: white;
@@ -57,23 +59,23 @@ h1 {
     padding-right: 10px;
     border: 5px solid black;
     text-align: center;
-}
-.search-row {
+  }
+  .search-row {
     display: inline;
     padding-top: 1rem;
-    /* height: 4rem; */
-}
-#searchButton {
+    height: 4rem;
+  }
+  #searchButton {
     font-size: 2px;
     width: 80px;
     height: 60px;
-}
-.search {
+  }
+  .search {
     width: 100%;
     position: realtive;
     display: flex;
-}
-#canvas-image-blending {
+  }
+  #canvas-image-blending {
     position: absolute;
     display: block;
     width: 100%;
@@ -83,14 +85,14 @@ h1 {
     bottom: 0;
     left: 0;
     z-index: -1;
-}
-.slideshow {
+  }
+  .slideshow {
     position: relative;
     width: 100%;
     height: 200px;
     overflow: hidden;
-}
-.images {
+  }
+  .images {
     background: url(assets/superimage.jpg);
     position: absolute;
     left: 0;
@@ -99,28 +101,28 @@ h1 {
     width: 300%;
     animation: slideshow 10s linear infinite;
     margin-top: 10px;
-}
-@keyframes slideshow {
+  }
+  @keyframes slideshow {
     0% {
         left: 0;
     }
     100% {
         left: -50%;
     }
-}
-.main-area {
+  }
+  .main-area {
     display: -webkit-inline-flex;
     grid-gap: 20px;
-    grid-template-areas: "showcase showcase top-box-a" "showcase showcase top-box-b";
-}
-.showcase {
+    grid-template-areas: 'showcase showcase top-box-a' 'showcase showcase top-box-b'
+  }
+  .showcase {
     grid-area: showcase;
     display: flex;
     flex-direction: column;
     padding: 3rem;
     box-shadow: var(--shadow);
-}
-.description {
+  }
+  .description {
     text-align: left;
     font-size: small;
     margin-top: 10px;
@@ -128,12 +130,12 @@ h1 {
     -webkit-animation-delay: 1s;
     outline: auto;
     outline-color: white;
-}
-.description h4 {
+  }
+  .description h4 {
     text-align: center;
     padding-bottom: 4px;
-}
-.stats-input {
+  }
+  .stats-input {
     display: inline-block;
     color: white;
     font-size: large;
@@ -142,61 +144,68 @@ h1 {
     -webkit-animation-delay: 1s;
     outline: auto;
     outline-color: white;
-}
-.stats th {
+  }
+  .stats th {
     outline: auto;
     font-size: large;
     outline: auto;
-}
-.giphy {
+  }
+  .giphy {
     -webkit-animation-delay: 1s;
     outline: auto;
     outline-color: white;
-}
-.giphy img {
+  }
+  .giphy img {
     padding-bottom: 10px;
     display: table-column-group;
-}
-h2 {
+  }
+  h2 {
     font-size: x-large;
-}
-#searchButton {
+  }
+  #searchButton {
     color: red;
-}
-.movies {
+  }
+  .movies {
     -webkit-animation-delay: 1s;
     font-size: small;
     outline: auto;
     outline-color: white;
-}
-.Comics {
+  }
+  .Comics {
     text-align: center;
     font-size: medium;
     margin-top: 10px;
     margin-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
-}
-header {
+  }
+  header {
     text-align: center;
     padding: 35px 35px;
     text-align: center;
     margin-bottom: 0;
-}
-#footer {
+  }
+  #footer {
     text-align: center;
     padding-top: 3rem;
     padding-bottom: 1rem;
-}
-a {
+  }
+  a {
     font-weight: bold;
     color: red;
     font-size: x-large;
-}
-#footer-text {
+  }
+  #footer-text {
     font-size: small;
-}
-i {
+  }
+  i {
     color: white;
     size: 3x;
-}
+  }
+
+
+  @media (max-width: 760px) {
+    body {
+      flex-direction: column;
+    }
+  }

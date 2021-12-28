@@ -36,25 +36,21 @@ function searchComics(inputHero) {
 
         let height;
 
-        if (resp.results[0].appearance.height[0] !== "-")
-        {
+        if (resp.results[0].appearance.height[0] !== "-") {
             height = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.height[0]));
 
-        } else
-        {
+        } else {
             height = $("<tr>").text("Height").append($("<td>").text(resp.results[1].appearance.height[0]));
 
         }
 
         let weight;
 
-        if (resp.results[0].appearance.weight[0] !== "- lb")
-        {
-            weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[0].appearance.weight[0]));
+        if (resp.results[0].appearance.weight[0] !== "- lb") {
+            weight = $("<tr>").text("Height").append($("<td>").text(resp.results[0].appearance.weight[0]));
 
-        } else
-        {
-            weight = $("<tr>").text("Weight").append($("<td>").text(resp.results[1].appearance.weight[0]));
+        } else {
+            weight = $("<tr>").text("Height").append($("<td>").text(resp.results[1].appearance.weight[0]));
 
         }
 
@@ -86,16 +82,13 @@ function searchComics(inputHero) {
 
         let newImage;
 
-        if (resp.results[1] !== undefined)
-        {
+        if (resp.results[1] !== undefined) {
             newImage = $("<img>").attr("src", resp.results[1].image.url).attr("alt", "A picture of " + resp.results[0].name);
 
-        } else if (resp.results[0] !== undefined)
-        {
+        } else if (resp.results[0] !== undefined) {
             newImage = $("<img>").attr("src", resp.results[0].image.url).attr("alt", "A picture of " + resp.results[0].name);
 
-        } else
-        {
+        } else {
             newImage = $("<img>").attr("src", "assets/spidey.jpeg");
 
         }
@@ -116,8 +109,7 @@ function searchComics(inputHero) {
         //console.log(resp1);
         $(".giphy").empty();
 
-        for (var g = 7; g < resp1.data.length; g++)
-        {
+        for (var g = 7; g < resp1.data.length; g++) {
             let newGif = $("<img>").attr("src", resp1.data[g].images.original.url)
             $(".giphy").append(newGif);
             $("#giphy").show();
@@ -161,11 +153,9 @@ function searchComics(inputHero) {
 $("#searchButton").on("click", function () {
 
     let hero;
-    if ($("#hero-search").val() === "spiderman")
-    {
+    if ($("#hero-search").val() === "spiderman") {
         hero = "spider-man";
-    } else
-    {
+    } else {
         hero = $("#hero-search").val()
 
     }
